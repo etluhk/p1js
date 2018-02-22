@@ -8,6 +8,9 @@
     <h1 id="pealkiri"></h1>
     <input type="text" id="tekstikast">
     <button id="nupp">Vajuta Siia</button>
+
+    <div id="kast"></div>
+
     <script>
         console.log("tere");
 
@@ -44,10 +47,11 @@
         // Jajaa
 
         var link = document.createElement("a");
-        link.setAttribute('href', "http://google.com");
+        link.setAttribute('href', "#esimene");
+        link.href = "#teine";
         link.innerHTML = "Google kodulehekülg";
 
-        document.body.appendChild(link);
+        kast.appendChild(link);
 
     </script>
 </body>
