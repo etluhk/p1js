@@ -1,0 +1,45 @@
+<html>
+
+<head>
+    <title>Header</title>
+</head>
+
+<body>
+    <h1 id="pealkiri"></h1>
+    <input type="text" id="tekstikast">
+    <button id="nupp">Vajuta Siia</button>
+    <script>
+        console.log("tere");
+
+        nupp.addEventListener("click", function (e) {
+            console.log(e);
+            alert("Muutsin pealkirja ja tiitli: " + tekstikast.value);
+            pealkiri.innerHTML = tekstikast.value;
+            document.title = tekstikast.value;
+            var var3 = "See on funktsioonitundlik";
+        });
+
+        {
+            let var2 = "See on plokitundlik";
+        }
+        // Üherealine kommentaar
+
+        /*
+        See
+        on
+        mitmerealine
+        kommentaar
+        */
+
+        var massiiv1 = new Array("Tere");
+        var massiiv2 = [3, 2, 1, 0];
+
+        for(var i = 0; i < massiiv2.length; i++) {
+            console.log(massiiv2[i]);
+        }
+
+
+    </script>
+</body>
+
+</html>
