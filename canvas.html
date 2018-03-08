@@ -15,6 +15,7 @@
 
     <canvas id="canvas" width="1000" height="600">
     </canvas>
+    <input type="range" id="percent" name="length" min="-100" max="100" oninput="updateTextInput(this.value);">
     <script>
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
@@ -54,7 +55,19 @@
         ctx.font = "30px Comic Sans MS";
         ctx.fillText("Tekst canvasel", 10, 260)
         
-        ctx.drawImage(image, 500, 10);
+        ctx.drawImage(image, 300, 300);
+
+        var percent = document.getElementById("percent");
+        percent.oninput = function(){
+            draw(percent.value);
+        };
+
+        function draw(x){
+            var newlocation = 300 + Number(x);
+            console.log(newlocation);
+            ctx.clearRect(0,300,1000,300);
+            ctx.drawImage(image, newlocation, 300);
+        }
     </script>
 </body>
 </html>
