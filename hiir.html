@@ -17,18 +17,29 @@
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
         var rect = canvas.getBoundingClientRect();
+        var mousedown;
+
+        window.addEventListener("mousedown", function() {
+            mousedown = true;
+        });
+
+        window.addEventListener("mouseup", function() {
+            mousedown = false;
+        });
 
         window.addEventListener("mousemove", function(e) {
             var x = e.clientX - rect.left;
-                var y = e.clientY - rect.top;
-            window.addEventListener("mousedown", function() {
-
+            var y = e.clientY - rect.top;
+            console.log(x, y, mousedown);
+            
+            if (mousedown) {
                 ctx.fillStyle = "#000000";
-                ctx.moveTo(x,y);
                 ctx.lineTo(x,y);
                 ctx.stroke();
                 ctx.fillRect(x,y,1,1);
-            });
+            } else {
+                ctx.moveTo(x,y);
+            }
         });
     </script>
 </body>
