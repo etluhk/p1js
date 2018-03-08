@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <style>
+        #canvas {
+            border: 1px solid #000
+        }
+    </style>
     <title>Document</title>
 </head>
 <body>
@@ -11,8 +16,20 @@
     <script>
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
+        var rect = canvas.getBoundingClientRect();
 
-        window.addEventListener("mousemove");
+        window.addEventListener("mousemove", function(e) {
+            var x = e.clientX - rect.left;
+                var y = e.clientY - rect.top;
+            window.addEventListener("mousedown", function() {
+
+                ctx.fillStyle = "#000000";
+                ctx.moveTo(x,y);
+                ctx.lineTo(x,y);
+                ctx.stroke();
+                ctx.fillRect(x,y,1,1);
+            });
+        });
     </script>
 </body>
 </html>
