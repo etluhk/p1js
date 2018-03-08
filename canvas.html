@@ -14,13 +14,12 @@
 <body>
 
     <canvas id="canvas" width="1000" height="600">
-            <img id="source" src="https://mdn.mozillademos.org/files/5397/rhino.jpg"
-            width="300" height="227">
     </canvas>
     <script>
         var canvas = document.getElementById("canvas");
         var ctx = canvas.getContext("2d");
-        var image = document.getElementById('source');
+        var image = new Image();
+        image.src = "https://mdn.mozillademos.org/files/5397/rhino.jpg";
 
         ctx.fillRect(10, 10, 200, 100);
 
