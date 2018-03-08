@@ -19,6 +19,38 @@
         var ctx = canvas.getContext("2d");
 
         ctx.fillRect(10, 10, 200, 100);
+
+        ctx.beginPath();
+        ctx.fillStyle = "#ff0000";
+        ctx.lineWidth = 4;
+        ctx.shadowOffsetX = 10;
+        ctx.shadowOffsetY = 10;
+        ctx.shadowColor = "rgba(255, 0, 255, 1)";
+        ctx.shadowBlur = 5;
+        ctx.rect(10, 120, 200, 100);
+        ctx.stroke();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(220, 10);
+        ctx.lineTo(220, 110);
+        ctx.lineTo(420, 110);
+        ctx.lineTo(420, 10);
+        ctx.closePath();
+        ctx.fillStyle = "rgb(0, 255, 0)";
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.strokeStyle = "rgb(0, 0, 255)";
+        ctx.arc(270, 170, 50, 0, 1.5*Math.PI);
+        ctx.arc(370, 170, 50, 1.5*Math.PI, 1*Math.PI);
+        ctx.stroke();
+
+        ctx.fillStyle = "rgb(0, 0, 0)";
+        ctx.font = "30px Comic Sans MS";
+        ctx.fillText("Tekst canvasel", 10, 260)
+
     </script>
 </body>
 </html>
